@@ -58,8 +58,9 @@ const DigitalShelf = () => {
   const [loading, setLoading] = useState(true);
   const [blogLoading, setBlogLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const videosPerPage = 6;
+  const videosPerPage = 4;
   const blogsPerPage = 4;
+  const [loadedVideoIds, setLoadedVideoIds] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     const fetchVideos = async () => {
@@ -131,6 +132,18 @@ const DigitalShelf = () => {
     fetchVideos();
     fetchBlogPosts();
   }, []);
+
+  // Effect to handle lazy loading of video data
+  useEffect(() => {
+    const currentVideos = paginatedVideos;
+    const unloadedVideos = currentVideos.filter(video => !loadedVideoIds.has(video.id));
+    
+    if (unloadedVideos.length > 0) {
+      unloadedVideos.forEach(video => {
+        setLoadedVideoIds(prev => new Set([...prev, video.id]));
+      });
+    }
+  }, [currentVideoPage, videos]);
 
   const totalVideoPages = Math.ceil(videos.length / videosPerPage);
   const totalBlogPages = Math.ceil(blogPosts.length / blogsPerPage);
@@ -264,6 +277,7 @@ const DigitalShelf = () => {
                       videoId={video.id}
                       title={video.title}
                       publishedAt={video.publishedAt}
+                      isLoaded={loadedVideoIds.has(video.id)}
                     />
                   ))}
                 </div>

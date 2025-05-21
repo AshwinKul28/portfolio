@@ -4,9 +4,18 @@ interface YouTubeVideoProps {
   videoId: string;
   title: string;
   publishedAt: string;
+  isLoaded: boolean;
 }
 
-const YouTubeVideo = ({ videoId, title, publishedAt }: YouTubeVideoProps) => {
+const YouTubeVideo = ({ videoId, title, publishedAt, isLoaded }: YouTubeVideoProps) => {
+  if (!isLoaded) {
+    return (
+      <div className="bg-neutral-800/50 rounded-lg overflow-hidden border border-neutral-700 aspect-video animate-pulse">
+        <div className="w-full h-full bg-neutral-700/50" />
+      </div>
+    );
+  }
+
   return (
     <motion.div
       whileHover={{ scale: 1.02 }}

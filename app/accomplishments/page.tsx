@@ -160,6 +160,13 @@ const accomplishments: Accomplishment[] = [
         date: "2020",
         category: "outreach",
         badge: "https://www.credly.com/badges/13c44834-e0a7-4734-b0fc-8fa53aa5f278/public_url"
+    },
+    {
+      id: 19,
+      title: "Guest Lecturer - IIIT Pune",
+      description: "Conducted a 3 hours practical session on Quantum Gates and Circuits for the facaulty development program",
+      date: "2025",
+      category: "outreach"
     }
     ];
 
@@ -173,10 +180,14 @@ export default function Accomplishments() {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState('*');
   
-  // Filter accomplishments based on selected category
-  const filteredAccomplishments = selectedCategory === '*' 
+  // Filter and sort accomplishments based on selected category
+  const filteredAccomplishments = (selectedCategory === '*' 
     ? accomplishments 
-    : accomplishments.filter(acc => acc.category === selectedCategory);
+    : accomplishments.filter(acc => acc.category === selectedCategory)
+  ).sort((a, b) => {
+    // Sort by year in descending order (newest first)
+    return parseInt(b.date) - parseInt(a.date);
+  });
   
   const totalPages = Math.ceil(filteredAccomplishments.length / ITEMS_PER_PAGE);
   
