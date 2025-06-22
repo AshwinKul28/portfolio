@@ -8,19 +8,27 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const projects = [
   {
+    title: 'DevTools',
+    description: 'A collection of developer tools for the web.',
+    githubUrl: 'https://github.com/AshwinKul28/devtools',
+    stars: 1,
+    forks: 0,
+    language: 'TypeScript'
+  },
+  {
     title: 'Portfolio',
     description: 'My personal portfolio website built with Next.js and Tailwind CSS, featuring a modern and interactive terminal interface.',
     githubUrl: 'https://github.com/AshwinKul28/portfolio',
     stars: 1,
-    forks: 1,
+    forks: 2,
     language: 'TypeScript'
   },
   {
     title: 'Dice',
     description: 'An in-memory real-time database with SQL-based reactivity, optimized for building and scaling truly real-time applications.',
     githubUrl: 'https://github.com/AshwinKul28/dice',
-    stars: 10443,
-    forks: 1382,
+    stars: 10559,
+    forks: 1396,
     language: 'Go'
   },
   {
@@ -35,7 +43,7 @@ const projects = [
     title: 'Memtier Benchmark',
     description: 'A high-performance benchmarking tool for Redis and Memcached, providing detailed performance metrics.',
     githubUrl: 'https://github.com/AshwinKul28/memtier_benchmark',
-    stars: 0,
+    stars: 1,
     forks: 0,
     language: 'C'
   },
