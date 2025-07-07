@@ -26,33 +26,19 @@ interface OpenSource {
 }
 
 const experiences: Experience[] = [
-    // {
-    //     title: "Software Engineer L2",
-    //     company: "Stripe",
-    //     period: "Jul 2025 - Present",
-    //     location: "Bangalore, India",
-    //     description: [
-    //       "Architected and developed large-scale, event-driven systems using Go and microservices architecture",
-    //       "Implemented and maintained CI/CD pipelines using Tekton and Jenkins for cloud automation",
-    //       "Designed and developed REST APIs and microservices for enterprise applications",
-    //       "Worked extensively with Kubernetes, Docker, and cloud-native technologies",
-    //       "Contributed to open-source projects and maintained internal tools"
-    //     ],
-    //     technologies: [
-    //       { name: "Go", color: "text-cyan-400 border-cyan-400" },
-    //       { name: "Kubernetes", color: "text-blue-500 border-blue-500" },
-    //       { name: "Docker", color: "text-blue-300 border-blue-300" },
-    //       { name: "REST APIs", color: "text-green-300 border-green-300" },
-    //       { name: "Microservices", color: "text-fuchsia-400 border-fuchsia-400" },
-    //       { name: "Tekton", color: "text-pink-400 border-pink-400" },
-    //       { name: "Jenkins", color: "text-orange-400 border-orange-400" },
-    //       { name: "PostgreSQL", color: "text-blue-400 border-blue-400" },
-    //       { name: "Redis", color: "text-red-400 border-red-400" },
-    //       { name: "Kafka", color: "text-orange-400 border-orange-400" }
-    //     ],
-    //     label: "Work",
-    //     logo: "/images/stripe-logo.svg"
-    //   },    
+    {
+        title: "Software Engineer L2",
+        company: "Stripe",
+        period: "Jul 2025 - Present",
+        location: "Bangalore, India",
+        description: [
+          "Helping increase the global GDP of the internet."
+        ],
+        technologies: [
+        ],
+        label: "Work",
+        logo: "/images/stripe-logo.svg"
+      },    
   {
     title: "Senior Software Engineer",
     company: "IBM, India Software Labs",
