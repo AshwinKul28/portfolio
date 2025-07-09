@@ -27,7 +27,7 @@ interface OpenSource {
 
 const experiences: Experience[] = [
     {
-        title: "Software Engineer",
+        title: "Software Engineer 2",
         company: "Stripe, India",
         period: "Jul 2025 - Present",
         location: "Bangalore, India",
